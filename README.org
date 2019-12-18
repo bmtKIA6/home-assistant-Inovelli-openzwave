@@ -1,0 +1,26 @@
+* OpenZWave 1.4 configs for Inovelli dimmers/switches
+
+This repository contains the merged version of
+OpenZWave 1.4 configs and Inovelli's product definitions.
+
+These files are necessary for Home Assistant (0.102.+) to recognize
+the latest and greatest dimmers/switches
+
+This should enable:
+
+- Inovelli LZW30
+- Inovelli LZW30-SN
+- Inovelli LZW31
+- Inovelli LZW31-SN
+
+* What to do?
+
+- copy these files to HomeAssistant's installation, ie */config/openzwave/*
+- update */config/configrations.yml* with a new value, *config_path*, ie
+
+#+begin_src yaml
+zwave:
+  network_key: !secret zwave_network_key
+  config_path: openzwave/config/
+
+#+end_src
